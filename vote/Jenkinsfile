@@ -15,7 +15,6 @@ pipeline {
         }
       }
     }
-
     stage("deploy-to-prod"){
       when{
         changeset "**/vote/**"
