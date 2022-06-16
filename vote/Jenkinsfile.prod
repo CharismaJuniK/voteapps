@@ -2,6 +2,7 @@ pipeline {
   agent { label 'docker' } 
 
   stages{
+
     stage("build-and-push-image"){
       when{
         changeset "**/vote/**"
@@ -13,6 +14,7 @@ pipeline {
         }
       }
     }
+
 
     stage("deploy-to-prod"){
       when{
@@ -33,6 +35,7 @@ pipeline {
       }       
     }
   }
+
   post{
     always{
       echo 'Pipeline Complete'
